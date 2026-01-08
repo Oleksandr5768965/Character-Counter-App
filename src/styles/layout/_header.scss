@@ -1,9 +1,102 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+@use "../base/functions" as *;
 
 .header {
-    // background-color: $neutral600;
-    padding:rem(20, 16);
     &__top {
-        width:100px;
-        height:100px;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: rem(16) 0 rem(16) 0;
+    }
+    &__dark-theme-button {
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        background-color: $neutral100;
+        width:rem(32);
+        height:rem(32);
+        border-radius: rem(6);
+    }
+    &__title {
+        @include text-preset1-mobile;
+        text-align: center;
+        font-family: "DMSans Bold";
+        font-weight: 800;
+        margin: rem(40) 0 rem(40) 0;
+    }
+    &__textarea-container {
+        width: 100%;
+        display:flex;
+        flex-direction: column;
+        row-gap: rem(16);
+        textarea {
+            resize: none;
+            width:100%;
+            height:rem(200);
+            border-radius: rem(12);
+            border: solid 4px $neutral200;
+            background-color: $neutral100;
+            padding:rem(12) rem(12) 0 rem(12);
+            @include text-preset3;
+            color: $neutral700;
+            outline: none;
+        }
+        &--checkboxes { //customization for checkboxes 
+            display:flex;
+            flex-direction: column;
+            row-gap: rem(7);
+            div {
+                position: relative;
+                display: flex;
+                align-items: center;
+                input {
+                    display: none !important;
+                }
+                span {
+                    font-weight: 500;
+                }
+                label {
+                    position: relative;
+                    top: 1px;
+                    width: 16px;
+                    height: 16px;
+                    border: 1px solid black;
+                    border-radius: 4px;
+                    vertical-align: middle;
+                    transition: background 0.1s ease;
+                    cursor: pointer;
+                    display: block;
+                    margin-right: rem(10);
+                }
+                label::after {
+                    content: '';
+                    position: absolute;
+                    top: 1px;
+                    left: 4px;
+                    width: 4px;
+                    height: 8px;
+                    opacity: 0;
+                    transform: rotate(45deg) scale(0);
+                    border-right: 2px solid #000;
+                    border-bottom: 2px solid #000;
+                    transition: all 0.3s ease;
+                    transition-delay: 0.15s;
+                }
+                input:checked ~ label {
+                    border-color: transparent;
+                    background: $purple500;
+                    animation: jelly 0.6s ease;
+                }
+                input:checked ~ label::after {
+                    opacity: 1;
+                    transform: rotate(45deg) scale(1);
+                }
+            }
+        }
+        textarea::-webkit-scrollbar { display:none; }
     }
 }
+                 // CHECKBOXS CUSTOMISATION
+
+@keyframes jelly { from { transform: scale(1, 1); } 30% { transform: scale(1.25, 0.75); } 40% { transform: scale(0.75, 1.25); } 50% { transform: scale(1.15, 0.85); } 65% { transform: scale(0.95, 1.05); } 75% { transform: scale(1.05, 0.95); } to { transform: scale(1, 1); }  }

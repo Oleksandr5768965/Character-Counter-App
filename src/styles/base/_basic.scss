@@ -1,0 +1,12 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+@use "../base/functions" as *;
+
+.container {
+    padding: 0 rem(16) 0 rem(16);
+}
+body {
+    font-family: "DMSans Regular";
+    color:$neutral900;
+    @include text-preset4;
+}

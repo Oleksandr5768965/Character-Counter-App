@@ -1,1 +1,9 @@
-@use '@styles/layout/header';
+@use "./base/variables" as *;
+@use "./base/mixins" as *;
+@use "./base/functions" as *;
+
+@use "base/reset";
+@use "base/basic";
+@use "base/fonts";
+
+@use "layout/header";

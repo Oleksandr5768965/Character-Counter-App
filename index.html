@@ -10,8 +10,27 @@
   <section class="header">
     <div class="container">
       <div class="header__top">
-        <!-- <img src="assets/images/logo-light-theme.svg" alt="Logo"> -->
-         awervawsdvsd
+         <img src="assets/images/logo-light-theme.svg" alt="Logo">
+         <div class="header__dark-theme-button">
+            <img src="assets/images/icon-moon.svg" alt="Dark Mode Img">
+         </div>
+      </div>
+      <h1 class="header__title"> Analyze your text in real-time.</h1>
+      <div class="header__textarea-container">
+        <textarea name="text" id="text"></textarea>
+        <div class="header__textarea-container--checkboxes">
+          <div>
+            <input checked="" type="checkbox" id="exclude-cbx" class="hidden-xs-up">
+            <label for="exclude-cbx"></label>
+           <span>Exclude Spaces</span>
+          </div>
+          <div>
+            <input checked="" type="checkbox" id="set-char-cbx" class="hidden-xs-up">
+            <label for="set-char-cbx"></label>
+           <span>Set Character Limit</span>
+          </div>
+          <p class="reading-time-valuable">Approx. reading time: 1 minute</p>
+        </div>
       </div>
     </div>
   </section>
