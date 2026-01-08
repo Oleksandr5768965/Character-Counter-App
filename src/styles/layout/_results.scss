@@ -1,0 +1,35 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+@use "../base/functions" as *;
+
+.results {
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(16);
+        margin:rem(40) 0 rem(24) 0;
+    }
+    &__block {
+        display:flex;
+        justify-content: space-between;
+        background-color: $purple400;
+        border-radius: rem(12);
+        padding: rem(20);
+        overflow: hidden;
+        position: relative;
+        &--text {
+            display:flex;
+            flex-direction: column;
+            row-gap: rem(8);
+            span { @include text-preset1-mobile; font-family: "DMSans Bold"}
+            p { @include text-preset3; }
+        }
+        &--img {
+            position:absolute;
+            right:-50px;
+            top:-16px;
+        }
+    }
+    &__block.word-count-block { background-color: $yellow500; }
+    &__block.sentence-count-block { background-color: $orange500;}
+}
