@@ -1,3 +1,72 @@
 @use "../base/variables" as *;
 @use "../base/mixins" as *;
 @use "../base/functions" as *;
+
+.letter-count {
+    &__list {
+        p {
+            margin-top: rem(20);
+        }
+    }
+    &__list-title {
+        font-family: "DMSans SemiBold";
+        @include text-preset2;
+    }
+}
+.row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+.row:first-of-type {
+    margin-top:rem(20);
+}
+.letter {
+    @include text-preset4;
+    text-transform: uppercase;
+}
+
+.bar-wrapper {
+    flex: 1;
+    height: 12px;
+    background: $neutral100;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.bar {
+    height: 100%;
+    background: $purple400;
+    border-radius: 6px;
+    width: 0%;
+    transition: width .2s ease;
+}
+
+.info {
+    width: 80px;
+    font-size: 12px;
+    text-align: right;
+    @include text-preset4;
+}
+.toggle-btn-more {
+    @include text-preset3;
+    cursor:pointer;
+    &::after {
+        content: url("../../../assets/images/arrow-down-light-mode.png");
+        position: absolute;
+        margin-left: rem(8);
+        transform: rotate(180deg);
+    }
+
+}
+.toggle-btn-less {
+    @include text-preset3;
+    cursor: pointer;
+    &::after {
+        content: url("../../../assets/images/arrow-down-light-mode.png");
+        position: absolute;
+        margin-left: rem(8);
+        transform: rotate(360deg);
+    }
+}

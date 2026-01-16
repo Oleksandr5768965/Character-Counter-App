@@ -1,0 +1,72 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+@use "../base/functions" as *;
+
+.dark-mode {
+    background: url("../../../assets/images/bg-dark-theme.png");
+    color:$neutral100;
+    .header {
+        &__top {
+            img {
+                content:url("../../../assets/images/logo-dark-theme.svg");
+            }
+            button {
+                // -webkit-animation: flip-vertical-right 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+                // animation: flip-vertical-right 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+                background-color: $neutral700;
+                img {
+                    content:url("../../../assets/images/icon-sun.svg");
+                }
+            }
+        }
+        &__textarea-container {
+            textarea {
+                background-color: $neutral800;
+                border: solid 2px $neutral700;
+                color:$neutral200;
+                
+            }
+        }
+        &__textarea-container--checkboxes {
+           label {
+            border-color: $neutral200;
+           }
+           #set-limit-field {
+            background-color: transparent;
+            border: solid 2px $neutral600;
+            color:$neutral200;
+            
+           }
+        }
+    }
+    .results {
+        &__block {
+            &--text {
+                color:$neutral900;
+            }
+        }
+    }
+    .letter-count {
+        .bar-wrapper { background-color: $neutral800; }
+        .toggle-btn-more {
+            &::after {
+                content:url("../../../assets/images/arrow-down-dark-mode.png");
+                width:rem(16);
+            }
+        }
+        .toggle-btn-less {
+            &::after {
+                content: url("../../../assets/images/arrow-down-dark-mode.png");
+                width: rem(16);
+            }
+        }
+    }
+    .flip-animation {
+        -webkit-animation: flip-vertical-right 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+        animation: flip-vertical-right 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    }
+    .flip-animation-reverse {
+        -webkit-animation: flip-vertical-right 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) reverse;
+        animation: flip-vertical-right 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) reverse;
+    }
+}

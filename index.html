@@ -6,30 +6,35 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <title>Character counter App</title>
 </head>
-<body>
+<body> 
   <section class="header">
     <div class="container">
       <div class="header__top">
          <img src="assets/images/logo-light-theme.svg" alt="Logo">
-         <div class="header__dark-theme-button">
+         <button class="header__dark-theme-button">
             <img src="assets/images/icon-moon.svg" alt="Dark Mode Img">
-         </div>
+         </button>
       </div>
       <h1 class="header__title"> Analyze your text in real-time.</h1>
       <div class="header__textarea-container">
         <textarea placeholder="Start typing here… (or paste your text)" name="text" id="text"></textarea>
+        <div class="error-message">
+          <img src="./assets/images/icon-info.svg" alt="Icon Info">Limit reached! Your text exceeds 
+          <span class="error-message-count"></span> characters.
+        </div>
         <div class="header__textarea-container--checkboxes">
-          <div>
+          <div class="header__textarea-checkbox exclude">
             <input  type="checkbox" id="exclude-cbx" class="hidden-xs-up">
             <label for="exclude-cbx"></label>
-           <span>Exclude Spaces</span>
+            <span>Exclude Spaces</span>
           </div>
-          <div>
+          <div class="header__textarea-checkbox set-limit">
             <input  type="checkbox" id="set-char-cbx" class="hidden-xs-up">
             <label for="set-char-cbx"></label>
-           <span>Set Character Limit</span>
+            <span>Set Character Limit</span>
+            <input type="number" id="set-limit-field">
           </div>
-          <p class="reading-time-valuable">Approx. reading time: 1 minute</p>
+          <p>Approx. reading time: <span class="reading-time"></span></p>
         </div>
       </div>
     </div>
@@ -69,11 +74,16 @@
   </section>
   <section class="letter-count">
     <div class="container">
-      <div class="letter-count__list">
+      <div class="letter-count__list" id="letter-density">
       <span class="letter-count__list-title">Letter Density</span>
+      <p id="placeholder">No characters found. Start typing to see letter density.</p>
       </div>
     </div>
   </section>
- <script type="module" src="/src/main.js"></script>
+ <script type="module" src="./src/js/main.js"></script>
+ <script type="module" src="./src/js/density-letters.js"></script>
+ <script type="module" src="./src/js/limit-characters.js"></script>
+ <script type="module" src="./src/js/dark-theme.js"></script> 
+ <script type="module" src="./src/js/text-reading-time.js"></script>
 </body>
 </html>

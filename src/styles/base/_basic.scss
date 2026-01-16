@@ -9,4 +9,5 @@ body {
     font-family: "DMSans Regular";
     color:$neutral900;
     @include text-preset4;
+    background:url("../../../assets/images/bg-light-theme.png");
 }

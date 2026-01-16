@@ -17,6 +17,7 @@
         width:rem(32);
         height:rem(32);
         border-radius: rem(6);
+        border:none;
     }
     &__title {
         @include text-preset1-mobile;
@@ -29,9 +30,9 @@
         width: 100%;
         display:flex;
         flex-direction: column;
-        row-gap: rem(16);
+        
         textarea {
-            resize: none;
+            resize:none;
             width:100%;
             height:rem(200);
             border-radius: rem(12);
@@ -41,17 +42,42 @@
             @include text-preset3;
             color: $neutral700;
             outline-color: $purple500;
+            transition: all 0.3s ease-in-out;
+        }
+        .error-message {
+            display:none;
+            flex-wrap: wrap;
+            color:$orange500;
+            margin-top: rem(4);
+            @include text-preset4;
+            img {
+                margin-right: 8px;
+            }
+            span {
+                margin:0 3px 0 3px;
+            }
         }
         &--checkboxes { //customization for checkboxes 
             display:flex;
             flex-direction: column;
             row-gap: rem(7);
+            margin-top: rem(16);
             div {
                 position: relative;
                 display: flex;
                 align-items: center;
-                input {
-                    display: none !important;
+                input#exclude-cbx { display: none !important; }
+                input#set-char-cbx { display: none !important; }
+                input#set-limit-field {
+                    display:none;
+                    width:rem(55);
+                    min-width:rem(55);
+                    margin-left: rem(10);
+                    padding:rem(4) rem(12);
+                    border-radius: rem(6);
+                    border-color: $neutral600;
+                    outline-color: $purple500;
+                    border-width: 1px;
                 }
                 span {
                     font-weight: 500;
@@ -91,6 +117,9 @@
                 input:checked ~ label::after {
                     opacity: 1;
                     transform: rotate(45deg) scale(1);
+                }
+                input:checked ~ #set-limit-field {
+                    display:inline-block;
                 }
             }
         }

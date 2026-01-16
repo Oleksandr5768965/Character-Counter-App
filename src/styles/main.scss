@@ -1,10 +1,12 @@
 @use "./base/variables" as *;
 @use "./base/mixins" as *;
 @use "./base/functions" as *;
+@use "./base/animations" as *;
 
 @use "base/reset";
 @use "base/basic";
 @use "base/fonts";
+@use "base/dark-mode";
 
 @use "layout/header";
 @use "layout/results";
