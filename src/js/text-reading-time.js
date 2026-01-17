@@ -14,8 +14,8 @@ function getReadingTime(text) {
 
 textArea.addEventListener("input", () => {
   const readingTime = getReadingTime(textArea.value);
-  readingTimeEl.textContent = readingTime
-    ? `Approx reading: ${readingTime}`
-    : "";
+  readingTimeEl.textContent = readingTime;
+    // ? `Approx reading: ${readingTime}`
+    // : "";
 });
 

@@ -1,0 +1,15 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+@use "../base/functions" as *;
+
+@mixin tablet-media {
+    @media (min-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin desktop-media {
+    @media (min-width: $desktop) {
+        @content;
+    }
+}

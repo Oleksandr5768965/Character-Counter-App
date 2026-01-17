@@ -1,6 +1,7 @@
 @use "../base/variables" as *;
 @use "../base/mixins" as *;
 @use "../base/functions" as *;
+@use "../base/media-queries" as *;
 
 .header {
     &__top {
@@ -129,3 +130,28 @@
                  // CHECKBOXS CUSTOMISATION
 
 @keyframes jelly { from { transform: scale(1, 1); } 30% { transform: scale(1.25, 0.75); } 40% { transform: scale(0.75, 1.25); } 50% { transform: scale(1.15, 0.85); } 65% { transform: scale(0.95, 1.05); } 75% { transform: scale(1.05, 0.95); } to { transform: scale(1, 1); }  }
+
+@include tablet-media {
+    .header {
+        &__title {
+            width:530px;
+            @include text-preset1;
+        }
+        &__title-wrapper {
+            display:flex;
+            justify-content: center;
+        }
+        &__textarea-container {
+            &--checkboxes {
+                flex-direction: row;
+                justify-content: flex-start;
+                .reading-time-container {
+                    margin-left:auto;
+                }
+            }
+        }
+        &__textarea-checkbox:first-child {
+            margin-right: rem(24);
+        }
+    }
+}

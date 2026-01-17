@@ -1,6 +1,7 @@
 @use "../base/variables" as *;
 @use "../base/mixins" as *;
 @use "../base/functions" as *;
+@use "../base/media-queries" as *;
 
 .container {
     padding: 0 rem(16) 0 rem(16);
@@ -10,4 +11,15 @@ body {
     color:$neutral900;
     @include text-preset4;
     background:url("../../../assets/images/bg-light-theme.png");
+}
+@include tablet-media {
+    .container {
+        padding: 0 rem(32) 0 rem(32);
+    }
+}
+
+@include desktop-media {
+    .container {
+        padding: 0 rem(225) 0 rem(225);
+    }
 }

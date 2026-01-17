@@ -15,7 +15,9 @@
             <img src="assets/images/icon-moon.svg" alt="Dark Mode Img">
          </button>
       </div>
-      <h1 class="header__title"> Analyze your text in real-time.</h1>
+      <div class="header__title-wrapper">
+        <h1 class="header__title"> Analyze your text in real-time.</h1>
+      </div>
       <div class="header__textarea-container">
         <textarea placeholder="Start typing here… (or paste your text)" name="text" id="text"></textarea>
         <div class="error-message">
@@ -34,7 +36,8 @@
             <span>Set Character Limit</span>
             <input type="number" id="set-limit-field">
           </div>
-          <p>Approx. reading time: <span class="reading-time"></span></p>
+          <div class="reading-time-container">Approx. reading time: <span class="reading-time"></span>
+          </div>
         </div>
       </div>
     </div>
