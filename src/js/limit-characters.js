@@ -20,6 +20,7 @@ export function updateState() {
     limitCharacters();
     errorMessage.style.display = "flex";
     errorMessageValue.textContent = limit;
+    errorMessage.classList.add("animate__shakeX");
   } else {
     resetError();
   }
@@ -29,6 +30,7 @@ export function resetError() {
   textArea.style.borderColor = "#C27CF8";
   textArea.style.outlineColor = "#C27CF8";
   errorMessage.style.display = "none";
+  errorMessage.classList.remove("animate__shakeX");
 }
 
 export function limitCharacters() {
@@ -40,46 +42,3 @@ textArea.addEventListener("input", updateState);
 setLimitCheck.addEventListener("change", updateState);
 excludeSpaceCheck.addEventListener("change", updateState);
 limitField.addEventListener("input", updateState);
-// excludeSpaceCheck.addEventListener("change", () => {
-//     const textNoSpace = textArea.value.replace(/\s/g, '');
-//     if (excludeSpaceCheck.checked) {
-//       textArea.addEventListener("input", () => {
-//         if (textNoSpace.length >= Number(limitField.value)) {
-//             limitCharacters();
-//             errorMessage.style.display = "flex";
-//             errorMessageValue.innerHTML = limitField.value;
-//         } else {
-//         textArea.style.borderColor = "#C27CF8";
-//         textArea.style.outlineColor = "#C27CF8";
-//         errorMessage.style.display = "none";
-//         }
-//       });
-//     } else {
-//     textArea.style.borderColor = "#C27CF8";
-//     textArea.style.outlineColor = "#C27CF8";
-//     errorMessage.style.display = "none";
-//     }
-// });
-// setLimitCheck.addEventListener("change", () => {
-//   if (setLimitCheck.checked) {
-//     textArea.addEventListener("input", () => {
-//       if (textArea.value.length >= Number(limitField.value)) {
-//         limitCharacters();
-//         errorMessage.style.display = "flex";
-//         errorMessageValue.innerHTML = limitField.value;
-//       } else {
-//         textArea.style.borderColor = "#C27CF8";
-//         textArea.style.outlineColor = "#C27CF8";
-//         errorMessage.style.display = "none";
-//       }
-//     });
-//   } else {
-//     textArea.style.borderColor = "#C27CF8";
-//     textArea.style.outlineColor = "#C27CF8";
-//     errorMessage.style.display = "none";
-//   }
-// });
-// export function limitCharacters() {
-//     textArea.style.borderColor = "#FE8159";
-//     textArea.style.outlineColor = "#FE8159";
-// };

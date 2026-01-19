@@ -11,15 +11,12 @@ body {
     color:$neutral900;
     @include text-preset4;
     background:url("../../../assets/images/bg-light-theme.png");
+    transition: background 0.5s ease-in-out;
 }
-@include tablet-media {
-    .container {
-        padding: 0 rem(32) 0 rem(32);
-    }
+body::selection {
+    background-color: $purple500;
+    color:$neutral0;
 }
-
-@include desktop-media {
-    .container {
-        padding: 0 rem(225) 0 rem(225);
-    }
-}
+@include tablet-media { .container {  padding: 0 rem(32) 0 rem(32); } }
+@include xl-tablet-media { .container { padding: 0 rem(100) 0 rem(100); } }
+@include desktop-media { .container { padding: 0 rem(225) 0 rem(225); } }

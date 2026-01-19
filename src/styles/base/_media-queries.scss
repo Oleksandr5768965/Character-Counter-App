@@ -13,3 +13,8 @@
         @content;
     }
 }
+@mixin xl-tablet-media {
+    @media (min-width: $xl-tablet) {
+        @content;
+    }
+}

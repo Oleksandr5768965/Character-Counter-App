@@ -1,6 +1,7 @@
 @use "../base/variables" as *;
 @use "../base/mixins" as *;
 @use "../base/functions" as *;
+@use "../base/media-queries" as *;
 
 .results {
     &__wrapper {
@@ -23,13 +24,47 @@
             row-gap: rem(8);
             span { @include text-preset1-mobile; font-family: "DMSans Bold"}
             p { @include text-preset3; }
+            z-index:1;
         }
         &--img {
             position:absolute;
             right:-50px;
             top:-16px;
+            z-index:0;
         }
     }
     &__block.word-count-block { background-color: $yellow500; }
     &__block.sentence-count-block { background-color: $orange500;}
+}
+@include tablet-media {
+    .results {
+        &__wrapper {
+            flex-direction: row;
+            column-gap: rem(16);
+            justify-content: space-between;
+        }
+        &__block {
+            min-width:32%;
+            padding:rem(16) rem(12);
+            &--text {
+                span {
+                    @include text-preset1;
+                }
+            }
+            &--img {
+                right: -73px;
+                top: -9px;
+            }
+        }
+    }
+}
+@include desktop-media {
+    .results {
+        &__block {
+            padding:rem(16);
+            &--img {
+                right:-30px;
+            }
+        }
+    }
 }

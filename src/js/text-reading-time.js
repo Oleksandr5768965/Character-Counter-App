@@ -5,7 +5,7 @@ const readingTimeEl = document.querySelector(".reading-time");
 
 function getReadingTime(text) {
   const words = text.trim().split(/\s+/).filter(Boolean).length;
-  if (words === 0) return "";
+  if (words === 0) return "Less then minute";
   const minutes = Math.ceil(words / 200);
   return minutes < 1
     ? "less than 1 minute"
@@ -15,7 +15,5 @@ function getReadingTime(text) {
 textArea.addEventListener("input", () => {
   const readingTime = getReadingTime(textArea.value);
   readingTimeEl.textContent = readingTime;
-    // ? `Approx reading: ${readingTime}`
-    // : "";
 });
 

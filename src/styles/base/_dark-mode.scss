@@ -5,6 +5,7 @@
 .dark-mode {
     background: url("../../../assets/images/bg-dark-theme.png");
     color:$neutral100;
+    transition:background 0.5s ease-in-out;
     .header {
         &__top {
             img {
