@@ -1,0 +1,32 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+@use "../base/functions" as *;
+@use "../base/media-queries" as *;
+
+.author-info {
+    &__block {
+        display: flex;
+        justify-content: center;
+        margin-top: rem(60);
+        a {
+            color:$neutral600;
+            font-weight: 600;
+            margin-left: rem(10);
+            transition:color 0.4s ease-in-out;
+            &:hover {
+                color:$purple500;
+            }
+        }
+        
+    }
+    .container {
+        padding-bottom: rem(15);
+    }
+}
+@include desktop-media {
+    .author-info {
+        &__block {
+            @include text-preset3;
+        }
+    }
+}
