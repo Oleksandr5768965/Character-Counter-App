@@ -1,4 +1,3 @@
-// import { textArea } from './limit-characters';
 
 const textArea = document.getElementById("text");
 const readingTimeEl = document.querySelector(".reading-time");

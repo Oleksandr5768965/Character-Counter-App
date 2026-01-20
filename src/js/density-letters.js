@@ -1,11 +1,11 @@
 
 export const textArea = document.getElementById("text");
-export const densityBlock = document.getElementById("letter-density");
+const densityBlock = document.getElementById("letter-density");
 
 textArea.addEventListener("input", updateDensity);
  export let expanded = false; // состояние раскрытия
 
- export function updateDensity() {
+function updateDensity() {
   const text = textArea.value.toLowerCase().replace(/\s/g, "");
 
   if (!text.length) {
