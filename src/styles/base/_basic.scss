@@ -11,7 +11,8 @@ body {
     color:$neutral900;
     @include text-preset4;
     background:url("../../../assets/images/bg-light-theme.png");
-    transition: background 0.5s ease-in-out;
+    transition: background , color 0.5s ease-in-out;
+    cursor: url("../../../assets/images/cursor-pointer.png"), auto;
 }
 body::selection {
     background-color: $purple500;

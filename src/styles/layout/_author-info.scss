@@ -13,6 +13,7 @@
             font-weight: 600;
             margin-left: rem(10);
             transition:color 0.4s ease-in-out;
+            cursor: url("../../../assets/images/cursor-pointer.png"), auto;
             &:hover {
                 color:$purple500;
             }

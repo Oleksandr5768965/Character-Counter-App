@@ -20,10 +20,14 @@
                 }
             }
         }
+        &__title {
+            -webkit-animation: text-focus-in 0.8s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+            animation: text-focus-in 0.8s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+        }
         &__textarea-container {
             textarea {
                 background-color: $neutral800;
-                border: solid 2px $neutral700;
+                border: solid 4px $neutral700;
                 color:$neutral200;
                 
             }

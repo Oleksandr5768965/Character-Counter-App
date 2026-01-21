@@ -3,7 +3,7 @@ export const textArea = document.getElementById("text");
 const densityBlock = document.getElementById("letter-density");
 
 textArea.addEventListener("input", updateDensity);
- export let expanded = false; // состояние раскрытия
+ export let expanded = false;          // expanded state
 
 function updateDensity() {
   const text = textArea.value.toLowerCase().replace(/\s/g, "");
@@ -16,7 +16,7 @@ function updateDensity() {
   }
 
   const map = {};
-  const lettersOnly = text.match(/[a-z]/g); // только английские буквы
+  const lettersOnly = text.match(/[a-z]/g);   // only english letters
 
   if (!lettersOnly) {
     densityBlock.innerHTML = `
